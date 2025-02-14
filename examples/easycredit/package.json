@@ -1,0 +1,29 @@
+{
+  "name": "easycredit",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "prepack": "pnpm run prepare && nuxt-module-build build",
+    "dev:playground": "pnpm run prepare && nuxi dev playground",
+    "build:playground": "pnpm run prepare && nuxi build playground",
+    "build": "pnpm run prepare && nuxt-module-build build --stub && nuxi prepare playground",
+    "lint": "biome check .",
+    "lint:fix": "biome check . --write",
+    "typecheck": "pnpm run prepare && vue-tsc --noEmit",
+    "prepare": "nuxt-module-build prepare"
+  },
+  "dependencies": {
+    "@shopware/composables": "canary",
+    "@shopware/api-client": "canary",
+    "js-cookie": "3.0.5",
+    "vue": "3.5.13"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.8.3",
+    "@types/node": "22.10.0",
+    "@vitejs/plugin-vue": "5.2.1",
+    "vite": "6.0.3",
+    "vue-tsc": "2.1.10"
+  }
+}
